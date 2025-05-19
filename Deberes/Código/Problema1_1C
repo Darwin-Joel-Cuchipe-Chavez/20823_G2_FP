@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main() {
+	float media;
+	float num_1;
+	float num_2;
+	printf("Desarrolle un programa que lea dos números reales del teclado e imprima su media.\n");
+	printf("Ingresar el primer número: ");
+	scanf("%f", &num_1);
+	printf("INgresar el segundo número: ");
+	scanf("%f", &num_2);
+	media = (num_1+num_2)/2;
+	printf("La media de %f + %f es: %f\n", num_1, num_2, media);
+	return 0;
+}
