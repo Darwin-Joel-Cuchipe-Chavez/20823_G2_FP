@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main() {
+	int num_1;
+	int num_2;
+	printf("Desarrolle un programa que lea 2 números enteros por teclado y determine si el primero de ellos es divisible por el segundo. Se mostrará por pantalla el resultado\n");
+	printf("Ingresar el primer número:");
+	scanf("%i", &num_1);
+	printf("Ingresar el segundo número:");
+	scanf("%i", &num_2);
+	if (num_2==0) {
+		printf("No es posible que 0 sea el segundo número\n");
+	} else {
+		if ((num_1%num_2)==0) {
+			printf("El %i es divisible por %i y su resultado de la división es %f\n", num_1, num_2, num_1/num_2);
+		} else {
+			printf("El %i NO es divisible por %i\n", num_1, num_2);
+		}
+	}
+	return 0;
+}
