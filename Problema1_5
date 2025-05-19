@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+	int num_dias;
+	float num_horas;
+	float num_minutos;
+	float num_segundos;
+	int x;
+	float x2;
+	printf("Desarrolle un programa que lea por teclado un valor entero X e, interpretando este valor como el número de segundos que dura un evento, calcule y muestre por pantalla cuántos días, horas, minutos y segundo representa x\n");
+	printf("Ingresar una cantidad a transformar en medidas del tiempo");
+	scanf("%i", &x);
+	num_dias = int(x/86400);
+	x2 = x%86400;
+	num_horas = int((x2/3600)*100+0.5)/100;
+	x2 = x2%3600;
+	num_minutos = int((x2/60)*100+0.5)/100;
+	x2 = x2%60;
+	num_segundos = int((x2/60)*100+0.5)/100;
+	printf("La cantidad de %i, representa: %i días,%f horas,%f minutos y %f segundos\n", x, num_dias, num_horas, num_minutos, num_segundos);
+	return 0;
+}
