@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+	int resp;
+	int val_abs;
+	int x;
+	printf("Desarrolle un programa que lea un número real X y escriba por pantalla |X|³\n");
+	printf("Ingresar el número que desea calcular su valor absoluto seguido por su cubo:");
+	scanf("%i", &x);
+	if (x<0) {
+		val_abs = x*(-1);
+		resp = pow(val_abs, 3);
+		printf("El valor absoluto de %i es %i y elevado al cubo es: %i\n", x, val_abs, resp);
+	} else {
+		resp = pow(x, 3);
+		printf("El valor absoluto de %i es %i y elevado al cubo es: %i\n", x, x, resp);
+	}
+	return 0;
+}
