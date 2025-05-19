@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main() {
+	float num;
+	printf("Desarrolle un programa que lea un número real del teclado y determina si pertenece al intervalo [0,10], indicando por pantalla el resultado\n");
+	printf("Ingresar un número");
+	scanf("%f", num);
+	if ((num>=0) && (num<=10)) {
+		printf("El número %f pertenece al intervalo entre 0 y 10\n", num);
+	} else {
+		printf("El número %f no pertenece al intervalo entre 0 y 10\n", num);
+	}
+	return 0;
+}
