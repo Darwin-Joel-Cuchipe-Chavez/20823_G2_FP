@@ -8,7 +8,7 @@ int main (){
     srand(time(NULL));
     com = rand()%100;
     for (int i=1;i<=5;i++){
-        printf("INGRESAR UN NÚMERO: ");
+        printf("INGRESAR UN NÃšMERO: ");
         scanf("%i",&num);
         if (num == com){
             printf("FELICIDADES, HAZ ACERTADO :)");
@@ -19,6 +19,10 @@ int main (){
             printf("INTENTO %d DE 5\n",i);
             printf("=============================\n");
         }
+    vec[i]
+    }
+    for (int i=1;i<=5;i++){
+        printf("INTENTO %d : %i"),i,vec[i];
     }
     return 0;
 }
