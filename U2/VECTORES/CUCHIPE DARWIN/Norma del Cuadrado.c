@@ -6,7 +6,7 @@ float num, suma;
 int i;
 void invector (float vec[], int n){
     for(int i=1; i<=MAX; i++){
-        printf("Ingresar un número para la posición %d:",i);
+        printf("Ingresar un nÃºmero para la posiciÃ³n %d:",i);
         scanf("%f",&num);
         vec[i] = num*num;
         suma = suma + vec[i];
