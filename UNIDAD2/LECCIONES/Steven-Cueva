@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <limits.h> // Para usar INT_MIN
+
+int main() {
+    int filas, columnas;
+
+    // Solicitar dimensiones de la matriz
+    printf("Ingrese el número de filas: ");
+    scanf("%d", &filas);
+    printf("Ingrese el número de columnas: ");
+    scanf("%d", &columnas);
+
+    // Declaración de la matriz
+    int matriz[filas][columnas];
+
+    // Ingreso de datos de la matriz
+    printf("Ingrese los elementos de la matriz:\n");
+    for (int f = 0; f < filas; f++) {
+        for (int c = 0; c < columnas; c++) {
+            printf("Elemento [%d][%d]: ", f, c);
+            scanf("%d", &matriz[f][c]);
+        }
+    }
+
+    // Solicitar fila a analizar
+    int filaAnalizar;
+    printf("Ingrese el número de fila a analizar (0 a %d): ", filas - 1);
+    scanf("%d", &filaAnalizar);
+
+    // Validación de la fila
+    if (filaAnalizar < 0 || filaAnalizar >= filas) {
+        printf("Error: La fila ingresada está fuera del rango permitido.\n");
+        return 1;
+    }
+
+    // Buscar el valor máximo en la fila seleccionada
+    int mayor = INT_MIN;
+    for (int col = 0; col < columnas; col++) {
+        if (matriz[filaAnalizar][col] > mayor) {
+            mayor = matriz[filaAnalizar][col];
+        }
+    }
+
+    // Mostrar el resultado
+    printf("El valor máximo en la fila %d es: %d\n", filaAnalizar, mayor);
+
+    return 0;
+}
