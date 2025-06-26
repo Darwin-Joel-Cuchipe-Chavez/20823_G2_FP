@@ -1,10 +1,11 @@
+// Revisi√≤n del ejercicio de MTZ U2T2
 #include <stdio.h>
 
 void ingresarMatriz(int matriz[][100], int fila, int columna) {
     int num_ele;
     for (int i = 0; i < fila; i++) {
         for (int j = 0; j < columna; j++) {
-            printf("INGRESAR UN VALOR PARA LA POSICI”N [%i][%i] DE LA MATRIZ: ", i, j);
+            printf("INGRESAR UN VALOR PARA LA POSICI√ìN [%i][%i] DE LA MATRIZ: ", i, j);
             scanf("%i", &num_ele);
             matriz[i][j] = num_ele;
         }
@@ -23,7 +24,7 @@ int buscarElementoMayor(int matriz[][100], int fila_bus, int columna) {
 
 int main() {
     int fila, columna, fila_bus;
-    int matriz[100][100]; // Definimos un tamaÒo m·ximo para la matriz
+    int matriz[100][100]; // Definimos un tama√±o m√°ximo para la matriz
 
     printf("INGRESAR UN VALOR PARA LA CANTIDAD DE FILAS DE LA MATRIZ: ");
     scanf("%i", &fila);
@@ -41,7 +42,7 @@ int main() {
     }
 
     int ele_may = buscarElementoMayor(matriz, fila_bus, columna);
-    printf("EL N⁄MERO M¡S GRANDE DE LA FILA [%i] ES: %i\n", fila_bus, ele_may);
+    printf("EL N√öMERO M√ÅS GRANDE DE LA FILA [%i] ES: %i\n", fila_bus, ele_may);
 
     return 0;
 }
