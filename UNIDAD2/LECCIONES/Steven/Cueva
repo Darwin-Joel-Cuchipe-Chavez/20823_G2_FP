@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int numeroSecreto, intento, i;
+    int adivinado = 0; // Bandera para saber si el número fue adivinado
+
+    // RF2.1 – Generar un número aleatorio entre 1 y 100
+    srand(time(NULL)); // Inicializa la semilla para la generación aleatoria
+    numeroSecreto = rand() % 100 + 1;
+
+    printf("¡Bienvenido al juego de adivinanza!\n");
+    printf("Tienes 5 intentos para adivinar el número entre 1 y 100.\n");
+
+    // RF2.2 – Permitir hasta 5 intentos mediante un ciclo 'for'
+    for(i = 0; i < 5; i++) {
+        printf("Intento %d: Ingresa tu numero: ", i + 1);
+        scanf("%d", &intento);
+
+        // RF2.3 – Indicar si el intento es correcto, bajo o alto
+        if(intento == numeroSecreto) {
+            printf("¡Correcto! Has adivinado el numero.\n");
+            // RF2.5 – Mostrar mensaje secreto si acierta
+            printf("MENSAJE SECRETO: ¡Eres un Crack universitario!\n");
+            adivinado = 1;
+            break; // Salir del ciclo si se adivina el número
+        } else if(intento < numeroSecreto) {
+            printf("Muy bajo. Intenta con un numero mayor.\n");
+        } else {
+            printf("Muy alto. Intenta con un numero menor.\n");
+        }
+    }
+
+    // RF2.4 – Mostrar mensaje final si no adivinó el número
+    if(!adivinado) {
+        printf("\nLo siento, no adivinaste el numero. Era: %d\n", numeroSecreto);
+    }
+
+    return 0;
