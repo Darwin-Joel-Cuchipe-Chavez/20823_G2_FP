@@ -3,8 +3,5 @@ Grupo N2 de Fundamentos de Programacion
 
 Integrantes:
 
--Miguel Chávez
-
 -Darwin Cuchipe
-
--Steven Cueva
+-Kerlly Bonila
