@@ -4,4 +4,5 @@ Grupo N2 de Fundamentos de Programacion
 Integrantes:
 
 -Darwin Cuchipe
+
 -Kerlly Bonila
