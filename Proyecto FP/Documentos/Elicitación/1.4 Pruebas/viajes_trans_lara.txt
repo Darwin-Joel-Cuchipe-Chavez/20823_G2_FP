@@ -1,0 +1,2 @@
+sdf|David Bilbao|SIKA|Guayaquil|Ibarra|2025-12-03|2025-12-04|699
+VJE001|Guido Silva|HOLCIM|Quito|Quevedo|2025-07-20|2025-07-20|600
