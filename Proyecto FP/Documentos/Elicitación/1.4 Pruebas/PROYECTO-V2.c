@@ -70,18 +70,18 @@ int validarFecha(const char *fecha) {
         return 0; // Formato incorrecto
     }
     if (year < 2000 || year>2025) {
-        return 0; // Año menor a 2000 o mayor a 2025
+        return 0; // AÃ±o menor a 2000 o mayor a 2025
     }
     if (month < 1 || month > 12) {
         return 0; // Mes fuera de rango
     }
-    // Validar días según el mes
+    // Validar dÃ­as segÃºn el mes
     int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // 0 es un placeholder
 
     if (day<1 || day > daysInMonth[month]) {
-        return 0; // Día fuera de rango para el mes
+        return 0; // DÃ­a fuera de rango para el mes
     }
-    return 1; // Fecha válida
+    return 1; // Fecha vÃ¡lida
 }
 
 int compararFechas(const char *fecha1_str, const char *fecha2_str) {
@@ -123,7 +123,7 @@ void crearRegistro(Registro *r, Registro lista[], int cantidad) {
     printf("\n===== FORMULARIO DE NUEVO REGISTRO DE VIAJE =====\n");
     char temp_input[205]; // Buffer temporal para inputs
 
-    // 1. ID del viaje - VALIDACIONES: Longitud, No vacío, Único
+    // 1. ID del viaje - VALIDACIONES: Longitud, No vacÃ­o, Ãšnico
     do {
         printf("1. Ingrese el ID unico del viaje (ej. VJE001, maximo 6 caracteres): ");
         fgets(temp_input, sizeof(temp_input), stdin);
@@ -225,7 +225,7 @@ void crearRegistro(Registro *r, Registro lista[], int cantidad) {
         r->fecha_salida[strcspn(r->fecha_salida, "\n")] = '\0';
         if (strlen(r->fecha_salida) == 0) {
             printf("Error: La fecha de salida no puede estar vacia.\n");
-        } else if (!validarFecha(r->fecha_salida)) { // Esta función debe validar formato, año, mes, día
+        } else if (!validarFecha(r->fecha_salida)) { // Esta funciÃ³n debe validar formato, aÃ±o, mes, dÃ­a
             printf("Error: Formato o fecha invalida. Use YYYY-MM-DD, con anio >= 2000, mes entre 1-12 y dias validos para el mes.\n");
         }
     } while (strlen(r->fecha_salida) == 0 || !validarFecha(r->fecha_salida));
@@ -237,7 +237,7 @@ void crearRegistro(Registro *r, Registro lista[], int cantidad) {
         r->fecha_retorno[strcspn(r->fecha_retorno, "\n")] = '\0';
         if (strlen(r->fecha_retorno) == 0) {
             printf("Error: La fecha de retorno no puede estar vacia.\n");
-        } else if (!validarFecha(r->fecha_retorno)) { // Esta función ya valida formato, año, mes, día
+        } else if (!validarFecha(r->fecha_retorno)) { // Esta funciÃ³n ya valida formato, aÃ±o, mes, dÃ­a
             printf("Error: Formato o fecha invalida. Use YYYY-MM-DD, con anio >= 2000, mes entre 1-12 y dias validos para el mes.\n");
         } else if (compararFechas(r->fecha_retorno, r->fecha_salida) < 0) { // Validar que retorno no sea menor que salida
             printf("Error: La fecha de retorno no puede ser anterior a la fecha de salida (%s).\n", r->fecha_salida);
@@ -395,7 +395,7 @@ void editarRegistro(Registro *r) {
         // Validaciones
         if (strlen(r->fecha_retorno) == 0) {
             printf("Error: La fecha de retorno no puede estar vacia.\n");
-        } else if (!validarFecha(r->fecha_retorno)) { // Esta función ya valida formato, año, mes, día
+        } else if (!validarFecha(r->fecha_retorno)) { // Esta funciÃ³n ya valida formato, aÃ±o, mes, dÃ­a
             printf("Error: Formato o fecha invalida. Use YYYY-MM-DD, con anio >= 2000, mes entre 1-12 y dias validos para el mes.\n");
         } else if (compararFechas(r->fecha_retorno, r->fecha_salida) < 0) { // Validar que retorno no sea menor que salida
             printf("Error: La fecha de retorno no puede ser anterior a la fecha de salida (%s).\n", r->fecha_salida);
@@ -512,7 +512,7 @@ int main() {
     Registro lista[100];
     int cantidad = 0;
     int opcion = 0;
-    char idBuscada[8]; // Tamaño ajustado para el ID
+    char idBuscada[8]; // TamaÃ±o ajustado para el ID
     int pos;
     const char *nombre_archivo = "viajes_trans_lara.txt";
 
@@ -581,7 +581,7 @@ int main() {
                 pos = buscarPorID(lista, cantidad, idBuscada);
                 if (pos != -1) {
                     char confirmacion;
-                    printf("¿Esta seguro que desea eliminar el registro con ID '%s'? (s/n): ", idBuscada);
+                    printf("Â¿Esta seguro que desea eliminar el registro con ID '%s'? (s/n): ", idBuscada);
                     scanf(" %c", &confirmacion);
                     limpiarBuffer();
 
@@ -619,7 +619,7 @@ int main() {
                 break;
 
             case 6: // SALIR DEL PROGRAMA
-                printf(GREEN "SALIENDO DEL PROGRAMA... ¡HASTA LUEGO!\n" RESET);
+                printf(GREEN "SALIENDO DEL PROGRAMA... Â¡HASTA LUEGO!\n" RESET);
                 break;
 
             default:
